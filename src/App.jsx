@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import GamePage from "./pages/GamePage.jsx";
+import usePoints from "./hooks/usePoints.js";
 
 function App() {
   const [player, setPlayer] = useState("");
@@ -13,16 +14,21 @@ function App() {
     setPlayerFlag(true);
   };
   let user = localStorage.getItem("player");
+  const { hanldePoint } = usePoints();
 
   useEffect(() => {
-    if (user) setPlayerFlag(true);
-    else setPlayerFlag(false);
+    if (user) {
+      setPlayerFlag(true);
+    } else {
+      hanldePoint(0);
+      setPlayerFlag(false);
+    }
   });
 
   return (
     <>
       {playerFlag ? (
-        <GamePage onLogOut={setPlayerFlag}/>
+        <GamePage onLogOut={setPlayerFlag} />
       ) : (
         <div className="form">
           <form action="#" onSubmit={hanldeSubmit}>

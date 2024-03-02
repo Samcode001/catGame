@@ -18,3 +18,14 @@
   font-weight: 600;
   text-align: center;
 }
+
+@media (max-width: 47em) {
+  .main-page {
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+  }
+
+  .game-page{
+    gap: 1rem;
+  }
+}

@@ -36,3 +36,11 @@
   width: 50px;
   aspect-ratio: 1;
 }
+
+
+@media (max-width:47em){
+  .card-container{
+    width: 120px;
+    height: 150px;
+  }
+}

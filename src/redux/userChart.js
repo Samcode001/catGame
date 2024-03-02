@@ -1,31 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import usePoints from "../hooks/usePoints";
 
+const { hanldePoint, userPoints } = usePoints();
 
-const getPoint = async () => {
-  try {
-    const res = await axios.post("http://localhost:8080/findPointsByUsername", {
-      username: "sam",
-    });
-
-    const value = res.data["sam"];
-    return value; // Assuming you want to return secondValue, which seems to be the intention in your code
-  } catch (error) {
-    console.error("Error fetching user points:", error);
-    throw error; // Re-throw the error to handle it elsewhere, if necessary
-  }
-};
-
-
-
-
-
-const hanldePoint = async (points) => {
-  const res = await axios.post("http://localhost:8080/addpoint", {
-    username: "sam",
-    points: points,
-  });
-};
+console.log(userPoints);
 
 const hanldeDefusers = async (defusers) => {
   const res = await axios.post("http://localhost:8080/addpoint", {
