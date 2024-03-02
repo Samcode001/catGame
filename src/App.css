@@ -1,0 +1,32 @@
+.form {
+  border: 1px solid gray;
+  width: 40vw;
+  height: 50vh;
+  margin: 10rem auto;
+  border-radius: 3rem;
+}
+
+.form > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem
+  ;
+}
+
+form>*{
+    font-size: clamp(1.2rem,4vw,2.6rem);
+    color: brown;
+    font-weight: 600;
+}
+
+
+button{
+    border-radius: 1rem;
+    color: brown;
+    line-height: 0;
+    border: none;
+    background-color: tan;
+    padding: 1em;
+}
