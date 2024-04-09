@@ -18,7 +18,7 @@ const GamePage = ({onLogOut}) => {
   const reset = () => {
     setOverFlag(false);
     return setCards(
-      Array.from({ length: 8 }, () => Math.floor(Math.random() * 4))
+      Array.from({ length: 5 }, () => Math.floor(Math.random() * 4))
     );
   };
 
