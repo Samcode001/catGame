@@ -3,7 +3,6 @@ import Card from "../components/Card";
 import "../styles/GamePage.css";
 import { useDispatch, useSelector } from "react-redux";
 import TopBar from "../components/TopBar.jsx";
-import LeaderBoard from "../components/LeaderBoard.jsx";
 import { addDefuser, addPoint, removeDefuser } from "../redux/userChart.js";
 
 const GamePage = ({onLogOut}) => {
@@ -33,7 +32,6 @@ const GamePage = ({onLogOut}) => {
     switch (cardNumber) {
       case 0:
         setTimeout(() => removeCard(cardIndex), 1500);
-        dispatch(addPoint());
         break;
 
       case 1:
@@ -42,7 +40,6 @@ const GamePage = ({onLogOut}) => {
           setTimeout(() => removeCard(cardIndex), 1500);
         } else {
           setOverFlag(true);
-          // setTimeout(() => {}, 1500);
           setCards([1]);
           setTimeout(reset, 2200);
         }
@@ -50,13 +47,11 @@ const GamePage = ({onLogOut}) => {
 
       case 2:
         dispatch(addDefuser());
-        dispatch(addPoint());
         setTimeout(() => removeCard(cardIndex), 1500);
         break;
 
       case 3:
         setTimeout(reset, 1500);
-        dispatch(addPoint());
         break;
 
       default:
@@ -76,9 +71,7 @@ const GamePage = ({onLogOut}) => {
       <TopBar onLogOut={onLogOut} />
 
       <div className="main-page">
-        <div className="leaderboard">
-          <LeaderBoard />
-        </div>
+       
 
         <div className="game-page">
           {cards &&
