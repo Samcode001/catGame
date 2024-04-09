@@ -7,7 +7,7 @@ import { addDefuser, addPoint, removeDefuser } from "../redux/userChart.js";
 
 const GamePage = ({onLogOut}) => {
   const [cards, setCards] = useState(
-    Array.from({ length: 8 }, () => Math.floor(Math.random() * 4))
+    Array.from({ length: 5 }, () => Math.floor(Math.random() * 4))
   );
 
   const [overFlag, setOverFlag] = useState(false);
